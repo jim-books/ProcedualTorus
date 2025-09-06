@@ -13,5 +13,9 @@ struct ProcedualTorusApp: App {
         WindowGroup {
             ContentView()
         }
+        
+        ImmersiveSpace(id: "Torus") {
+            TorusView()
+        }
     }
 }
