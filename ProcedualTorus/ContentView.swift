@@ -10,14 +10,19 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @State private var seed: Int = 0
+    
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
-
-            Text("Hello, world!")
+        HStack {
+            EntityView(seed: seed)
+            
+            Divider ()
+            
+            Button("Regenerate") {
+                seed += 1
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
